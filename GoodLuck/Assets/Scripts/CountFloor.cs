@@ -26,8 +26,8 @@ public class CountFloor : MonoBehaviour
         }
         else if(nowFloor<selectedFloor){
               nowFloor+=Time.deltaTime*(selectedFloor/moveSpeed);
-         
-              FloorNumber.text=nowFloor.ToString();
+              int FloorNum=(int)nowFloor;
+              FloorNumber.text=FloorNum.ToString();
         }
         
     }
