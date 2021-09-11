@@ -26,6 +26,7 @@ public class ClickButton : MonoBehaviour
                 if(Input.GetMouseButtonDown(0)){
                 selectionRenderer.material=selectMaterial;
                 selection.tag="SelectedButton";
+            
                 
                } 
             }

@@ -7,6 +7,7 @@ TagManager:
   - Button
   - GameObject
   - SelectedButton
+  - Door
   layers:
   - Default
   - TransparentFX
