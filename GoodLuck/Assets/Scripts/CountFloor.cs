@@ -10,9 +10,12 @@ public class CountFloor : MonoBehaviour
     public float nowFloor=0;
     public float moveSpeed;
     public TextMesh FloorNumber;
-    public GameObject[] SelectedFloor;
+    public GameObject[] Floor;
+    public TextMesh[] Number;
     public TextMesh[] SelectedNumber;
     public int i;
+    public Material DefaultMaterial;
+    public GameObject SelectedFloor;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,17 +25,20 @@ public class CountFloor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (selectedFloor==0){
 
             SelectingFloor();
 
         }
         else if(nowFloor<selectedFloor){
+
               nowFloor+=Time.deltaTime*(selectedFloor/moveSpeed);
               int FloorNum=(int)nowFloor;
               FloorNumber.text=FloorNum.ToString();
         }
         else if(nowFloor>(selectedFloor+1)){
+
               nowFloor-=Time.deltaTime*(selectedFloor/moveSpeed);
               int FloorNum=(int)nowFloor;
               FloorNumber.text=FloorNum.ToString();
@@ -40,18 +46,35 @@ public class CountFloor : MonoBehaviour
 
         if((int)nowFloor==(int)selectedFloor){
             selectedFloor=0;
+            SelectedFloor.GetComponent<Renderer>().material=DefaultMaterial;
+            
         }
         
     }
 
     void SelectingFloor(){
 
-        int len=SelectedNumber.Length;
+        int len=Number.Length;
+        int j=0;
 
         for(i=0;i<len;i++){
 
-            if(SelectedFloor[i].tag=="SelectedButton"){
-                selectedFloor=int.Parse(SelectedNumber[i].text);
+            if(Floor[i].tag=="SelectedButton"){
+                
+               // while(j<=len){
+                    //if(SelectedNumber[j]==null){
+                      //  SelectedNumber[j]=Number[i];
+                      //  break;
+                   // }
+                   // else{
+                    //    j+=1;
+                    //}
+                    
+               // }
+                SelectedNumber[0]=Number[i];
+                SelectedFloor=Floor[i];
+                
+                selectedFloor=int.Parse(SelectedNumber[0].text);
             }
         }
         

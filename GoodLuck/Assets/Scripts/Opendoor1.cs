@@ -6,10 +6,12 @@ using TMPro;
 public class Opendoor1 : MonoBehaviour
 {
     public Animator Open;
+    public Animator NPC;
     public GameObject[] Button;
     public TextMesh FloorNumber;
     public TextMesh[] SelectedNumber;
     public int i;
+    public int j=0;
     public bool Actived;
     public Collider Target;
 
@@ -29,6 +31,19 @@ public class Opendoor1 : MonoBehaviour
             if(FloorNumber.text==SelectedNumber[i].text){
                  Open.SetBool("Open" ,true);
                  Button[i].tag="Button";
+                 if(j==0){
+                     NPC.SetBool("Animation1",true);
+                     NPC.SetBool("Animation2",false);
+                     j=1;
+                 }
+                 else{
+                     NPC.SetBool("Animation1",false);
+                     NPC.SetBool("Animation2",true);
+                     j=0;
+
+
+                 }
+                 
                 
             }
         }
