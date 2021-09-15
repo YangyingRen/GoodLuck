@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ClickButton : MonoBehaviour
 {
     public string selectableTag="Button";
     public Material selectMaterial;
+    public Transform[] Floor;
+    public Transform targetFloor;
+    public int targetNumber;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +31,13 @@ public class ClickButton : MonoBehaviour
                 if(Input.GetMouseButtonDown(0)){
                 selectionRenderer.material=selectMaterial;
                 selection.tag="SelectedButton";
+                targetFloor=selection;
+                int len=Floor.Length;
+                for(int i=0;i<len;i++){
+                    if(Floor[i]==targetFloor){
+                        targetNumber=i+1;
+                    }
+                }
             
                 
                } 

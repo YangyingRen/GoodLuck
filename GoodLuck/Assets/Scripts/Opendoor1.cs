@@ -50,8 +50,7 @@ public class Opendoor1 : MonoBehaviour
         }
 
         if(Actived==true){
-            Open.SetBool("Open",false);
-            
+            Open.SetBool("Open",false);  
         }
 
 
