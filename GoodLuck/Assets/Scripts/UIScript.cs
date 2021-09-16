@@ -8,6 +8,7 @@ public class UIScript : MonoBehaviour
 {
 
     public GameObject MapPanel;
+    public GameObject QuestPanel;
     public Image TimeCounter;
     public GameObject Button;
     public GameObject EndGame;
@@ -22,7 +23,7 @@ public class UIScript : MonoBehaviour
     void Update()
     {
      if(TimeCounter.fillAmount!=0){
-     TimeCounter.fillAmount-=Time.deltaTime*0.1f;
+     TimeCounter.fillAmount-=Time.deltaTime*0.01f;
      
      }
      else{
@@ -38,6 +39,14 @@ public class UIScript : MonoBehaviour
     }
     public void CloseMap(){
         MapPanel.SetActive(false);
+        Time.timeScale=1f;
+    }
+    public void CheckQuest(){
+        QuestPanel.SetActive(true);
+        Time.timeScale=0f;
+    }
+    public void CloseQuest(){
+        QuestPanel.SetActive(false);
         Time.timeScale=1f;
     }
     public void Restart(){
