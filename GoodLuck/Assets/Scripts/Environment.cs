@@ -22,11 +22,14 @@ public class Environment : MonoBehaviour
 
             Env.material=Ongoing;
             GameObject.Find("Elevator").GetComponent<CountFloor>().enabled=true;
+            GameObject.Find("b7").GetComponent<ClickButton>().enabled=true;
 
         }
         else{
             Env.material=Arrived;
             GameObject.Find("Elevator").GetComponent<CountFloor>().enabled=false;
+            GameObject.Find("b7").GetComponent<ClickButton>().enabled=false;
+
         }
         
     }

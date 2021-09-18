@@ -25,7 +25,7 @@ public class QUestList : MonoBehaviour
     // Update is called once per frame
     void Update()
     {if(Trigger.GetComponent<Opendoor1>().Actived==true){
-        if(int.Parse(FloorNumber.text)==questFloor[i]){
+        if((int)GameObject.Find("Elevator").GetComponent<CountFloor>().nowFloor==questFloor[i]){
             i=Random.Range(0,len);
             questname.text=quest[i];
             test+=1;

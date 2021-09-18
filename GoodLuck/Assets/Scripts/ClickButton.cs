@@ -29,8 +29,10 @@ public class ClickButton : MonoBehaviour
             var selectionRenderer=selection.GetComponent<Renderer>();
             if(selectionRenderer!=null){
                 if(Input.GetMouseButtonDown(0)){
-                selectionRenderer.material=selectMaterial;
                 selection.tag="SelectedButton";
+                 if(selection.tag=="SelectedButton"){
+                selectionRenderer.material=selectMaterial;
+               }
                 targetFloor=selection;
                 int len=Floor.Length;
                 for(int i=0;i<len;i++){
@@ -43,6 +45,8 @@ public class ClickButton : MonoBehaviour
                } 
             }
                }
+
+              
             }
             
            

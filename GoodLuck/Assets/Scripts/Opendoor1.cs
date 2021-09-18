@@ -14,6 +14,7 @@ public class Opendoor1 : MonoBehaviour
     public int j=0;
     public bool Actived;
     public Collider Target;
+    public Material DefaultMaterial;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class Opendoor1 : MonoBehaviour
             if(FloorNumber.text==SelectedNumber[i].text){
                  Open.SetBool("Open" ,true);
                  Button[i].tag="Button";
+                 Button[i].GetComponent<Renderer>().material=DefaultMaterial;
+
                  if(j==0){
                      NPC.SetBool("Animation1",true);
                      NPC.SetBool("Animation2",false);

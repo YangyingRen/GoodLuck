@@ -31,13 +31,13 @@ public class CountFloor : MonoBehaviour
             SelectingFloor();
 
         }
-        else if(nowFloor<selectedFloor){
+        else if((int)nowFloor<(selectedFloor+1)){
 
               nowFloor+=Time.deltaTime*moveSpeed;
               int FloorNum=(int)nowFloor;
               FloorNumber.text=FloorNum.ToString();
         }
-        else if(nowFloor>(selectedFloor+1)){
+        else if((int)nowFloor>(selectedFloor-1)){
 
               nowFloor-=Time.deltaTime*moveSpeed;
               int FloorNum=(int)nowFloor;
